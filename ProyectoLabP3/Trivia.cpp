@@ -11,10 +11,10 @@ Trivia::Trivia()
 	
 	al_install_keyboard();
 	NuevoBoton = new Button("Imagenes/Boton_Verde.png");
-	NuevoBoton->setX(2000);
-	NuevoBoton->setY(900);
-	NuevoBoton->setHeight(512);
-	NuevoBoton->setWidth(512);
+	NuevoBoton->setX(200);
+	NuevoBoton->setY(200);
+	NuevoBoton->setHeight(2050);
+	NuevoBoton->setWidth(2050);
 	NuevoBoton->setSizeX(0.05);
 	NuevoBoton->setSizeY(0.05);
 	NuevoBoton->setAngle(0);

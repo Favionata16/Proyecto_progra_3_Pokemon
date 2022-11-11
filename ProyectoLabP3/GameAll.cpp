@@ -148,7 +148,7 @@ void GameAll::GameAll_Draw()
 
 			Mini_juego_Trivia->Dibujar();
 			//  al_draw_scaled_bitmap(mapa1, 0, 0, 1280, 720, 0, 0, 4 * 1280, 4 * 720, 0);
-		  //	al_draw_bitmap_region(personaje, 64 * multiply2, 96 * multiply, 64, 96, idelx, idely, 0);
+		  	al_draw_bitmap_region(personaje, 64 * multiply2, 96 * multiply, 64, 96, idelx, idely, 0);
 			  //al_draw_rotated_bitmap(Ruleta, 60, 60, 100, 100, 100, 0);
 			al_flip_display();
 			al_clear_to_color(al_map_rgb(255, 255, 255));

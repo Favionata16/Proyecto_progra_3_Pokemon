@@ -14,6 +14,11 @@ protected:
 	int height;
 	int width;
 	float angle;
+	int sx;
+	int sy;
+	float TintGrade;
+
+
 	ALLEGRO_COLOR color;
 
 
@@ -24,7 +29,9 @@ public:
 	Body();
 	bool CanDraw;
 	void setCanDraw(bool _CanDraw);
-
+	void setTintGrade(float grade);
+	void setSx(int _sx);
+	void setSy(int _sy);
 	void setX(int x);
 	void setY(int y);
 	void setSizeX(float _x);
