@@ -1,5 +1,6 @@
 
 #include "GameAll.h"
+#include "EventAll.h"
 using namespace std;
 
 //NUESTRA PARTE
@@ -26,15 +27,16 @@ int main() {
 	al_install_keyboard();
 	al_install_audio();
 	al_init_acodec_addon();
+	
 
 	ALLEGRO_EVENT_QUEUE* queue=al_create_event_queue();
+	EventAll NewEventAll = EventAll(queue);
 
 
-
-	GameAll NewGame = GameAll(queue);
+	GameAll NewGame = GameAll(queue,&NewEventAll);
 
 	while (true) {
-	
+		NewEventAll.RegisEvent();
 		NewGame.GameAll_Draw();
 	}
 	/*int idelx = 200;

@@ -11,12 +11,12 @@ Trivia::Trivia()
 	
 	al_install_keyboard();
 	NuevoBoton = new Button("Imagenes/Boton_Verde.png");
-	NuevoBoton->setX(200);
-	NuevoBoton->setY(200);
+	NuevoBoton->setX(1080);
+	NuevoBoton->setY(600);
 	NuevoBoton->setHeight(2050);
 	NuevoBoton->setWidth(2050);
-	NuevoBoton->setSizeX(0.05);
-	NuevoBoton->setSizeY(0.05);
+	NuevoBoton->setSizeX(0.09);
+	NuevoBoton->setSizeY(0.09);
 	NuevoBoton->setAngle(0);
 	Ruleta = al_load_bitmap("ruleta.png");
 
@@ -40,7 +40,7 @@ void Trivia::AnimarRuleta()
 void Trivia::Dibujar()
 {
 
-	//al_draw_scaled_rotated_bitmap(Ruleta, 60, 60, 120, 120, 15, 15, rotation, 0);
+	al_draw_scaled_rotated_bitmap(Ruleta, 60, 60, 120, 120, 15, 15, rotation, 0);
 
 
 	NuevoBoton->Draw();

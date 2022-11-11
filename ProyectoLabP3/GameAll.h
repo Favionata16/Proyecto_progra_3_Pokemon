@@ -2,11 +2,12 @@
 
 #include "Object.h"
 #include "Trivia.h"
+#include "EventAll.h"
 class GameAll:Object
 {
 public:
 	GameAll();
-	GameAll(ALLEGRO_EVENT_QUEUE* queue);
+	GameAll(ALLEGRO_EVENT_QUEUE* queue,EventAll* NewEventAll);
 
 
 	void GameAll_Draw();
@@ -15,7 +16,7 @@ public:
 private:
 
 
-
+	EventAll *Main_Events;
 	ALLEGRO_SAMPLE* song;
 
 	ALLEGRO_SAMPLE_INSTANCE* songInstance;

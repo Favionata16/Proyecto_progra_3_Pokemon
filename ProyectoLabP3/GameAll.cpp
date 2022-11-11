@@ -30,7 +30,7 @@ GameAll::GameAll() {
 	al_start_timer(timerper);
 
 }
-GameAll::GameAll(ALLEGRO_EVENT_QUEUE * _queue)
+GameAll::GameAll(ALLEGRO_EVENT_QUEUE * _queue , EventAll* NewEventAll)
 {
 	al_init();
 	al_init_font_addon();
@@ -43,6 +43,7 @@ GameAll::GameAll(ALLEGRO_EVENT_QUEUE * _queue)
 	al_install_audio();
 	al_init_acodec_addon();
 
+	Main_Events = NewEventAll;
 	al_reserve_samples(2);
 	song = al_load_sample("menu.wav");
 	 songInstance = al_create_sample_instance(song);
@@ -51,10 +52,10 @@ GameAll::GameAll(ALLEGRO_EVENT_QUEUE * _queue)
 	al_set_sample_instance_gain(songInstance, 30);
 
 	 camara;
- ventana = al_create_display(1280, 720);
- this->queue = _queue;
+    ventana = al_create_display(1280, 720);
+    this->queue = _queue;
 
-	 timerper = al_create_timer(1.0 / 60);
+	timerper = al_create_timer(1.0 / 60);
 	timer = al_create_timer(1.0 / 60);
 	al_register_event_source(queue, al_get_keyboard_event_source());
 	al_register_event_source(queue, al_get_display_event_source(ventana));
