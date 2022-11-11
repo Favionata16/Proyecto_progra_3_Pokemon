@@ -1,14 +1,6 @@
-#include <iostream>
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_font.h>
-#include <allegro5/allegro_ttf.h>
-#include <allegro5/allegro_image.h>
-#include<allegro5/allegro_primitives.h>
-#include <Windows.h>
-#include <allegro5/allegro_audio.h>
-#include <allegro5/allegro_acodec.h>
-#include "Player.h"
-#include "Trivia.h"
+
+#include "GameAll.h"
+#include "EventAll.h"
 using namespace std;
 
 //NUESTRA PARTE
@@ -25,7 +17,31 @@ void ActualizarCamara(float* PosicionCamara, float x, float y, int ancho, int al
 };
 
 int main() {
-	int idelx = 200;
+	al_init();
+	al_init_font_addon();
+	al_init_ttf_addon();
+	al_install_keyboard();
+	al_install_mouse();
+	al_init_image_addon();
+	al_init_primitives_addon();
+	al_install_keyboard();
+	al_install_audio();
+	al_init_acodec_addon();
+	
+
+	ALLEGRO_EVENT_QUEUE* queue=al_create_event_queue();
+	EventAll NewEventAll = EventAll(queue);
+
+
+	GameAll NewGame = GameAll(queue,&NewEventAll);
+
+	while (true) {
+
+		NewEventAll.RegisEvent();
+
+		NewGame.GameAll_Draw();
+	}
+	/*int idelx = 200;
 	int idely = 200;
 	int multiply = 0;
 	int multiply2 = 0;
@@ -145,5 +161,6 @@ int main() {
 
 
 	}
+	*/
 	return 0;
 }

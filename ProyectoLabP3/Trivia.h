@@ -1,27 +1,31 @@
 #pragma once
 
 #ifndef TRIVIA_H
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_font.h>
-#include <allegro5/allegro_ttf.h>
 
-#include <allegro5/allegro_image.h>
+#include "Button.h"
+
 #define TRIVIA_H
+
 
 class Trivia
 {
 
 private:
-	
+
+	Button* NuevoBoton ;
+	bool ReduceSpeed;
+	float speed;
 public:
 	Trivia();
-
+	Trivia(EventAll* event);
 	float rotation;
+
 	void AnimarRuleta();
+	void Events();
 	void Dibujar();
 	ALLEGRO_BITMAP* Ruleta;
 	ALLEGRO_TIMER* timer;
-	
+	EventAll* Main_Event;
 	
 
 	

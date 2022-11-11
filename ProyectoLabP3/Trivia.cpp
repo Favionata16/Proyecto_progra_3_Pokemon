@@ -8,31 +8,67 @@ Trivia::Trivia()
 	al_install_keyboard();
 	al_install_mouse();
 	al_init_image_addon();
-	
+	ReduceSpeed = false;
 	al_install_keyboard();
-	
+	NuevoBoton = new Button("Imagenes/Boton_Verde.png");
+	NuevoBoton->setX(1080);
+	NuevoBoton->setY(600);
+	NuevoBoton->setHeight(2050);
+	NuevoBoton->setWidth(2050);
+	NuevoBoton->setSizeX(0.09);
+	NuevoBoton->setSizeY(0.09);
+	NuevoBoton->setAngle(0);
 	Ruleta = al_load_bitmap("ruleta.png");
-
+	speed = 0.05;
 	timer = al_create_timer(1.0 / 60);
 	al_start_timer(timer);
 	rotation = 0;
 
-}
+	
 
+}
+Trivia::Trivia(EventAll* event):Trivia() {
+
+
+
+	
+
+	Main_Event = event;
+}
 void Trivia::AnimarRuleta()
 {
 //	al_draw_rotated_bitmap(Ruleta,60,60,100,100,rotation,0);
 
 //	al_draw_bitmap(Ruleta,50,50,0);
-	rotation +=0.05;
+	if (ReduceSpeed) {
+		if (speed >0) {
+			speed -= 0.0002;
+		}
+		if (speed < 0) {
+			speed = 0;
+		}
+	
+	
+	}
+	rotation +=speed;
 
 }
+void Trivia::Events() {
 
+	if (NuevoBoton->Clicked(Main_Event)) {
+		ReduceSpeed=true;
+	
+	
+	}
+
+}
 void Trivia::Dibujar()
 {
 
-
 	al_draw_scaled_rotated_bitmap(Ruleta, 60, 60, 120, 120, 15, 15, rotation, 0);
+
+
+	NuevoBoton->Draw();
 
 
 
