@@ -43,6 +43,7 @@ public:
 	bool Draw();
 
 
+	bool Colisiones(float x, float y, float ex, float ey, int ancho, int alto, int dir, int movespeed);
 
 	~Body();
 

@@ -14,6 +14,7 @@ Body::Body()
     sx = 0;
     sy = 0;
     TintGrade = 20;
+
     al_init_font_addon();
     al_init_ttf_addon();
     al_install_keyboard();
@@ -68,12 +69,44 @@ void Body::setSy(int _sy)
     //zona de dibujado del bitmap
     sy = _sy;
 }
+bool Body::Colisiones(float x, float y, float ex, float ey, int ancho, int alto, int dir, int movespeed) {
 
+    if (x + ancho < ex || x> ex + ancho || y + alto<ey || y>ey + alto) {
+        return false;
+    }
+
+    ///Colision
+
+    if (dir == 0) {
+        this->y -= movespeed;
+
+    }
+    else if (dir == 1) {
+        this->x+= movespeed;
+    }
+    else if (dir == 2) {
+
+        this->x -= movespeed;
+    }
+    else if (dir == 3) {
+        this->y+= movespeed;
+    }
+    return true;
+
+
+
+
+
+
+
+
+
+}
 bool Body::Draw()
 {
     if (CanDraw) {
     //     al_draw_tinted_scaled_rotated_bitmap(Sprite, color, width / 2, height / 2, x, y, sizeX, sizeY, angle, 0);
-         al_draw_tinted_scaled_rotated_bitmap_region(Sprite,width*sx,height*sy,width,height,color,width/2,height/2,x,y,sizeX,sizeY,angle,0);
+         al_draw_tinted_scaled_rotated_bitmap_region(Sprite,width*sx,height*sy,width,height, al_map_rgba_f(1, 1, 1, TintGrade) ,width/2,height/2,x,y,sizeX,sizeY,angle,0);
 
     }
 

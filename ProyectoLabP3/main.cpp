@@ -36,7 +36,9 @@ int main() {
 	GameAll NewGame = GameAll(queue,&NewEventAll);
 
 	while (true) {
+
 		NewEventAll.RegisEvent();
+
 		NewGame.GameAll_Draw();
 	}
 	/*int idelx = 200;

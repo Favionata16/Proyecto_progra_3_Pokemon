@@ -60,14 +60,14 @@ GameAll::GameAll(ALLEGRO_EVENT_QUEUE * _queue , EventAll* NewEventAll)
 	al_register_event_source(queue, al_get_keyboard_event_source());
 	al_register_event_source(queue, al_get_display_event_source(ventana));
 	al_register_event_source(queue, al_get_timer_event_source(timer));
-	al_register_event_source(queue,al_get_mouse_event_source());
+	
 	//musica
 	al_play_sample_instance(songInstance);
 	float PosicionCamara[2] = { 0,0 };
-	Mini_juego_Trivia = new Trivia();
- mapa1 = al_load_bitmap("MAPAAVANCE.png");
- personaje = al_load_bitmap("Playerm.png");
- Ruleta = al_load_bitmap("ruleta.png");
+	Mini_juego_Trivia = new Trivia(NewEventAll);
+    mapa1 = al_load_bitmap("MAPAAVANCE.png");
+    personaje = al_load_bitmap("Playerm.png");
+    Ruleta = al_load_bitmap("ruleta.png");
 	al_start_timer(timer);
 	al_start_timer(timerper);
 
@@ -154,7 +154,7 @@ void GameAll::GameAll_Draw()
 			al_flip_display();
 			al_clear_to_color(al_map_rgb(255, 255, 255));
 		}
-
+		Mini_juego_Trivia->Events();
 
 
 }
