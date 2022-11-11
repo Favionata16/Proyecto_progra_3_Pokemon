@@ -140,18 +140,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClCompile Include="Body.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="EventAll.cpp" />
+    <ClCompile Include="Event_I.cpp" />
+    <ClCompile Include="GameAll.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="Trivia.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\Downloads\Player.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Body.h" />
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="EventAll.h" />
+    <ClInclude Include="Event_I.h" />
+    <ClInclude Include="GameAll.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Trivia.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,18 +1,17 @@
 #pragma once
 
 #ifndef TRIVIA_H
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_font.h>
-#include <allegro5/allegro_ttf.h>
 
-#include <allegro5/allegro_image.h>
+#include "Button.h"
 #define TRIVIA_H
 
 class Trivia
 {
 
 private:
-	
+
+	Button* NuevoBoton ;
+
 public:
 	Trivia();
 
@@ -21,7 +20,7 @@ public:
 	void Dibujar();
 	ALLEGRO_BITMAP* Ruleta;
 	ALLEGRO_TIMER* timer;
-	
+
 	
 
 	
